@@ -56,7 +56,7 @@ def is_installed(package, package_overwrite=None):
 from .WaveNodes import Lerp, SinWave, InvSinWave, CosWave, InvCosWave, SquareWave, SawtoothWave, TriangleWave, AbsCosWave, AbsSinWave
 from .ScheduledNodes import (
     ValueSchedule, PromptSchedule, PromptScheduleNodeFlow, PromptScheduleNodeFlowEnd, PromptScheduleEncodeSDXL,
-    StringSchedule, BatchPromptSchedule, BatchValueSchedule, BatchPromptScheduleEncodeSDXL, BatchStringSchedule,
+    StringSchedule, BatchPromptSchedule, BatchValueSchedule, BatchValueScheduleCJ, BatchPromptScheduleEncodeSDXL, BatchStringSchedule,
     BatchValueScheduleLatentInput, BatchPromptScheduleEncodeSDXLLatentInput, BatchPromptScheduleLatentInput,
     ImageBatchFromValueSchedule
     #, BatchPromptScheduleNodeFlowEnd #, BatchGLIGENSchedule
@@ -83,6 +83,7 @@ NODE_CLASS_MAPPINGS = {
     "StringSchedule":StringSchedule,
     "BatchPromptSchedule": BatchPromptSchedule,
     "BatchValueSchedule": BatchValueSchedule,
+    "BatchValueScheduleCJ": BatchValueScheduleCJ,
     "BatchPromptScheduleEncodeSDXL": BatchPromptScheduleEncodeSDXL,
     "BatchStringSchedule": BatchStringSchedule,
     "BatchValueScheduleLatentInput": BatchValueScheduleLatentInput,
@@ -124,6 +125,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "FizzFrameConcatenate":"Frame Concatenate 📅🅕🅝",
     "BatchPromptSchedule": "Batch Prompt Schedule 📅🅕🅝",
     "BatchValueSchedule": "Batch Value Schedule 📅🅕🅝",
+    "BatchValueScheduleCJ": "Batch Value Schedule CJ 📅🅕🅝",
     "PromptScheduleEncodeSDXL": "Prompt Schedule SDXL 📅🅕🅝",
     "BatchPromptScheduleEncodeSDXL": "Batch Prompt Schedule SDXL 📅🅕🅝",
     "BatchStringSchedule": "Batch String Schedule 📅🅕🅝",
