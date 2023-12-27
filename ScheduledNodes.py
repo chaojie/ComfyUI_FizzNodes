@@ -606,6 +606,23 @@ class BatchValueSchedule:
         t = batch_get_inbetweens(batch_parse_key_frames(text, max_frames), max_frames)
         return (t, list(map(int,t)),)
 
+class BatchValueScheduleCJ:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": {"text": ("STRING", {"multiline": True, "default": defaultValue}),
+                             "max_frames": ("INT", {"default": 120.0, "min": 1.0, "max": 999999.0, "step": 1.0}),
+                             }}
+
+    RETURN_TYPES = ("FLOAT", "INT")
+    OUTPUT_IS_LIST = (True, True)
+    FUNCTION = "animate"
+
+    CATEGORY = "FizzNodes 馃搮馃厱馃厺/BatchScheduleNodes"
+
+    def animate(self, text, max_frames, ):
+        t = batch_get_inbetweens(batch_parse_key_frames(text, max_frames), max_frames)
+        return (t, list(map(int,t)),)
+
 class BatchValueScheduleLatentInput:
     @classmethod
     def INPUT_TYPES(s):
